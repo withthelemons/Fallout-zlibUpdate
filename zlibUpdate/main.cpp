@@ -2,7 +2,7 @@
 #include "nvse/PluginAPI.h"
 #include "zlib.h"
 
-#pragma comment(lib, "zlibstat.lib")
+#pragma comment(lib, "zlib.lib")
 
 #define EXTERN_DLL_EXPORT extern "C" __declspec(dllexport)
 
@@ -57,7 +57,7 @@ void PatchMemoryNop(ULONG_PTR Address, SIZE_T Size) {
 
 EXTERN_DLL_EXPORT bool FOSEPlugin_Query(const FOSEInterface* fose, PluginInfo* info) {
 	info->infoVersion = PluginInfo::kInfoVersion;
-	info->name = "zlib";
+	info->name = "zlib-ng";
 	info->version = 131;
 
 	return true;
@@ -111,7 +111,7 @@ EXTERN_DLL_EXPORT bool FOSEPlugin_Load(FOSEInterface* nvse) {
 #else
 EXTERN_DLL_EXPORT bool NVSEPlugin_Query(const NVSEInterface* nvse, PluginInfo* info) {
 	info->infoVersion = PluginInfo::kInfoVersion;
-	info->name = "zlib";
+	info->name = "zlib-ng";
 	info->version = 131;
 
 	return true;
